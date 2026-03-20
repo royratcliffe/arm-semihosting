@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.6)
-set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
+if(CMAKE_CROSSCOMPILING)
+    set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
+endif()
 
 project(arm-semihosting)
 
