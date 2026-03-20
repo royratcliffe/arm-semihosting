@@ -15,7 +15,7 @@ target_compile_definitions(arm-semihosting PUBLIC
 target_link_libraries(arm-semihosting PUBLIC
     m
 )
-target_sources(arm-semihosting PRIVATE
+target_sources(arm-semihosting PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/src/monitor_handles.c
     ${CMAKE_CURRENT_SOURCE_DIR}/src/fcvtf.c
 )
