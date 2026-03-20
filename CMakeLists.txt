@@ -10,7 +10,7 @@ target_include_directories(arm-semihosting PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/inc
 )
 target_compile_definitions(arm-semihosting PUBLIC
-    ARM_SEMIHOSTING_COMPILE_DEFINITIONS
+    ${ARMSemihostingCompileDefinitions}
 )
 target_link_libraries(arm-semihosting PUBLIC
     m
