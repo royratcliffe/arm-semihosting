@@ -1,0 +1,18 @@
+cmake_minimum_required(VERSION 3.6)
+if(CMAKE_CROSSCOMPILING)
+    set(CMAKE_TRY_COMPILE_TARGET_TYPE STATIC_LIBRARY)
+endif()
+
+project(arm-semihosting)
+
+add_library(arm-semihosting STATIC)
+target_include_directories(arm-semihosting PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}/inc
+)
+target_compile_definitions(arm-semihosting PUBLIC
+    ${ARMSemihostingCompileDefinitions}
+)
+target_sources(arm-semihosting PUBLIC
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/monitor_handles.c
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/fcvtf.c
+)
